@@ -57,15 +57,15 @@ export default class WebAuth {
 
         let redirectUrl = await agent.openWeb(loginUrl)
 
-        if (!redirectUrl || !redirectUrl.startsWith(client.redirectUri)) {
-            throw new AuthError({
-                json: {
-                    error: 'a0.redirect_uri.not_expected',
-                    error_description: `Expected ${client.redirectUri} but got ${redirectUrl}`
-                },
-                status: 0
-            })
-        }
+//         if (!redirectUrl || !redirectUrl.startsWith(client.redirectUri)) {
+//             throw new AuthError({
+//                 json: {
+//                     error: 'a0.redirect_uri.not_expected',
+//                     error_description: `Expected ${client.redirectUri} but got ${redirectUrl}`
+//                 },
+//                 status: 0
+//             })
+//         }
 
         // Response is returned in hash, but we want to get parsed object
         // Query can be parsed, therefore lets replace hash sign with '?' mark
